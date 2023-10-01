@@ -90,3 +90,6 @@ const questions = [
         ]
     },
 ]
+ const question = document.getElementById('question');
+ const answersButton = document.getElementById('answers');
+ const nextButton = document.getElementById('next');
