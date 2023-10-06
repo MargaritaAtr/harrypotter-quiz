@@ -145,6 +145,13 @@ function selectAnswer(a){
     });
     nextButton.style.display = 'block';
   }
+
+function showScore(){
+    resetQuiz();
+    question.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+} 
 function selectNextButton(){
     currentQuestionIndex++;
     if ( currentQuestionIndex < questions.length){
