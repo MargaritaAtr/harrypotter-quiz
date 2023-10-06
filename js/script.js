@@ -133,6 +133,7 @@ function selectAnswer(a){
     const isCorrect = selectBtn.dataset.correct === "true";
     if(isCorrect) {
         selectBtn.classList.add('correct');
+        score++;
     }else{
         selectBtn.classList.add('incorrect');
     }
@@ -144,6 +145,16 @@ function selectAnswer(a){
     });
     nextButton.style.display = 'block';
   }
+function selectNextButton(){
+    currentQuestionIndex++;
+    if ( currentQuestionIndex < questions.length){
+        showQuestion();
+    }else {
+        showScore();
+    }
+}
+
+
 
 
  startQuiz();
