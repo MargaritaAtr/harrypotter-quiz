@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Bitter:wght@200&family=Playfair+Display&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,24 +9,32 @@
 }
 
 body {
- background: black;
+    height: 100vh;
+    background-image: linear-gradient(whitesmoke, rgba(0, 0, 0, 0.3)), url(/assets/images/hagwards-castle.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .container {
-    background: whitesmoke;
+    background-image:linear-gradient( rgba(0, 0, 0, 0.5));
     width: 90%;
     max-width: 600px;
-    margin: 100px auto 0;
+    margin: 250px auto 0;
     border-radius: 10px;    
     padding: 30px;
 }
 .container h1{
+    text-transform: uppercase;
     font-size: 40px;
-    color: blue;
+    color: rgb(2,21,21);
     font-weight: 800 ;
-    border-bottom: 1px solid blue;
-    padding-bottom: 30px;
-
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 .quiz {
@@ -31,14 +42,16 @@ body {
 }
 
 .quiz h2 {
-    font-size: 25px;
-    color:rgb(47, 60, 60);
-    font-weight:600 ;
+    font-size: 20px;
+    color: rgb(2,21,21);
+    font-weight:600;
+   
 }
 
 .btn {
     background:whitesmoke;
     color: #222;
+    font-size: 15px;
     font-weight: 500;
     width: 100%;
     border: 1px solid #222;
@@ -48,6 +61,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+
 }
 
 .btn:hover.btn:hover:not([disabled]){
@@ -59,7 +73,7 @@ body {
     cursor: no-drop;
 }
 #next{
-    background: #001e4d;
+    background: #050c18;
     color: whitesmoke;
     font-weight: 500;
     width: 150px;
@@ -71,9 +85,9 @@ body {
     display: none;
 }
 .correct{
-    background: rgb(86, 133, 86);
+    background: rgb(100, 168, 100);
 }
 
 .incorrect{
-    background: rgb(171, 91, 91);
+    background: rgb(171, 92, 92);
 }
