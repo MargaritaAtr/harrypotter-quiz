@@ -115,6 +115,10 @@ const questions = [
         button.innerHTML = answer.text;
         button.classList.add('btn');
         answerButtons.appendChild(button);
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+         button.addEventListener('click', selectAnswer);   
     });
  }
 
@@ -124,6 +128,17 @@ const questions = [
         answerButtons.removeChild(answerButtons.firstChild);
     }
  }
+function selectAnswer(a){
+    const selectBtn = a.target;
+    const isCorrect = selectBtn.dataset.correct === "true";
+    if(isCorrect) {
+        selectBtn.classList.add('correct');
+    }else{
+        selectBtn.classList.add('incorrect');
+    }
+  }
+
+
 
  startQuiz();
 
