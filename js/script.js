@@ -91,7 +91,7 @@ const questions = [
     },
 ]
  const question = document.getElementById('question');
- const answerButton = document.getElementById('answers');
+ const answerButtons = document.getElementById('answers');
  const nextButton = document.getElementById('next');
 
  let currentQuestionIndex = 0;
@@ -105,6 +105,7 @@ const questions = [
  }
 
  function showQuestion(){
+    resetQuiz();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     question.innerHTML = questionNo + "." + currentQuestion.question;
@@ -113,8 +114,15 @@ const questions = [
         const button = document.createElement('button');
         button.innerHTML = answer.text;
         button.classList.add('btn');
-        answerButton.appendChild(button);
+        answerButtons.appendChild(button);
     });
+ }
+
+ function resetQuiz(){
+    nextButton.style.dispaly = 'none';
+    while(answerButtons.firstChild){
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
  }
 
  startQuiz();
