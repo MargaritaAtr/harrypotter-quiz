@@ -67,3 +67,10 @@ body {
     cursor: pointer;
     display: none;
 }
+.correct{
+    background: rgb(86, 133, 86);
+}
+
+.incorrect{
+    background: rgb(171, 91, 91);
+}
