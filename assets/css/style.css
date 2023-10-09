@@ -136,9 +136,10 @@ body {
    
 }
 footer {
-    margin: 1em;
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
 }
 .social-links {
     width: 100%;
