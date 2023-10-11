@@ -10,7 +10,7 @@
 
 body {
     height: 100vh;
-    background-image:url(/assets/images/train.jpg);
+    background-image:url(/assets/images/train-new.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,14 +37,6 @@ body {
     font-weight: 800 ;
     padding-bottom: 20px;
     text-align: left;
-}
-
-/* .quiz {
-    padding: 20px 0;
-} */
-.logo {
-    background-image: url(/assets/images/harry-potter.png);
-    padding-top: 20px;
 }
 
 .quiz h2 {

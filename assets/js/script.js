@@ -96,17 +96,33 @@ const questions = [
  const startButton = document.querySelector('.start-btn');
  const quizContainer = document.querySelector('.container');
  const welcomeScreen = document.querySelector ('.wrapper');   
-
+const timeLeft = document.querySelector('.time-left');
 
  let currentQuestionIndex = 0;
  let score = 0;
+ let count = 11;
+ let countdown;
 
+ startButton.addEventListener('click',function(){
+    document.body.style.backgroundImage = 'linear-gradient(whitesmoke, rgba(0, 0, 0, 0.3)),url(assets/images/hagwards-castle.jpg)';
+    welcomeScreen.classList.add('hide');
+    quizContainer.classList.remove('hide');
+    startQuiz();
+    timerDisplay();
+ });
+
+ window.onload = function () {
+    welcomeScreen.classList.remove('hide');
+    quizContainer.classList.add('hide');
+   
+ };
 
  function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
+    
  }
 
  function showQuestion(){
@@ -123,7 +139,8 @@ const questions = [
         if(answer.correct){
             button.dataset.correct = answer.correct;
         }
-         button.addEventListener('click', selectAnswer);   
+         button.addEventListener('click', selectAnswer); 
+         
     });
  }
 
@@ -178,14 +195,15 @@ nextButton.addEventListener('click', () => {
  startQuiz();
 
  
- startButton.addEventListener('click',function(){
-    document.body.style.backgroundImage = 'linear-gradient(whitesmoke, rgba(0, 0, 0, 0.3)),url(assets/images/hagwards-castle.jpg)';
-    welcomeScreen.classList.add('hide');
-    quizContainer.classList.remove('hide');
-    startQuiz();
- });
+ function timerDisplay () {
+    countdown = setInterval(function() {
+        count--;
+        timeLeft.innerHTML = `${count}s`;
+        if(count == 0){
+            clearInterval(countdown);
+        //     showQuestion();
+         }
+    },1000);
+ };
 
- window.onload = function () {
-    welcomeScreen.classList.remove('hide');
-    quizContainer.classList.add('hide');
-};
+
