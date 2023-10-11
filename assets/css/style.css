@@ -35,14 +35,13 @@ body {
     font-size: 40px;
     color: rgb(2,21,21);
     font-weight: 800 ;
-    border-bottom: 1px solid black;
     padding-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
-.quiz {
+/* .quiz {
     padding: 20px 0;
-}
+} */
 .logo {
     background-image: url(/assets/images/harry-potter.png);
     padding-top: 20px;
@@ -52,6 +51,7 @@ body {
     font-size: 20px;
     color: rgb(2,21,21);
     font-weight:600;
+    text-align: left;
    
 }
 
@@ -141,10 +141,30 @@ footer {
 .social-links i {
     font-size: 150%;
     margin: 1%;
-    color:rgb(119, 95, 49)
+    color:rgb(119, 95, 49);
   }
 
 .hide {
     display:none;
 }
+
+.header{
+    margin-bottom:1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid black;
+
+}
+.timer {
+    background-color: rgb(108, 87, 48);
+    width: 5.5em;
+    border-radius: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
   
+
+}
