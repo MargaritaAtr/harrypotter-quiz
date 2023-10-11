@@ -187,6 +187,7 @@ nextButton.addEventListener('click', () => {
         selectNextButton();
     }else{
         startQuiz();
+        timerDisplay();
     }
     
 });
