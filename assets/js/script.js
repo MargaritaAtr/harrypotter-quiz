@@ -108,6 +108,7 @@ const timeLeft = document.querySelector('.time-left');
     welcomeScreen.classList.add('hide');
     quizContainer.classList.remove('hide');
     startQuiz();
+    clearInterval(countdown);
     timerDisplay();
 
  });
@@ -149,10 +150,9 @@ const timeLeft = document.querySelector('.time-left');
  function resetQuiz(){
     nextButton.style.dispaly = 'none';
     while(answerButtons.firstChild){
-        answerButtons.removeChild(answerButtons.firstChild);
-        
+        answerButtons.removeChild(answerButtons.firstChild);  
     }
- }
+}
 function selectAnswer(a){
     const selectBtn = a.target;
     const isCorrect = selectBtn.dataset.correct === "true";
@@ -176,6 +176,7 @@ function showScore(){
     question.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
+    
 } 
 function selectNextButton(){
     currentQuestionIndex++;
@@ -184,6 +185,7 @@ function selectNextButton(){
        
     }else {
         showScore();
+        
     }
 }
 nextButton.addEventListener('click', () => {
@@ -206,9 +208,7 @@ nextButton.addEventListener('click', () => {
         if(count == 0){
             clearInterval(countdown);
             showScore();
-        }else{
-            startQuiz();
-         }
+        }
         
     },1000);
  };
