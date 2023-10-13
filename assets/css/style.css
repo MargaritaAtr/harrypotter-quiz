@@ -8,7 +8,7 @@
 
 body {
     height: 100vh;
-    background-image: url('/assets/images/train.jpg');
+    background-image: url(../images/train.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -178,13 +178,13 @@ footer {
         
     .container {  
         width: 100%;
-        max-width: 600px;
-        margin: 50px auto 0;
+        max-width: 500px;
+        margin: 0;
+     
     
     }
     .wrapper {
         margin:150px auto 0;
-      
 
     }
 
