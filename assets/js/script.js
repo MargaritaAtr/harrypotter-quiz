@@ -96,11 +96,11 @@ const questions = [
  const startButton = document.querySelector('.start-btn');
  const quizContainer = document.querySelector('.container');
  const welcomeScreen = document.querySelector ('.wrapper');   
-const timeLeft = document.querySelector('.time-left');
+    const timeLeft = document.querySelector('.time-left');
 
  let currentQuestionIndex = 0;
  let score = 0;
- let count = 21;
+ let count = 20;
  let countdown;
 
  startButton.addEventListener('click',function(){
@@ -108,14 +108,15 @@ const timeLeft = document.querySelector('.time-left');
     welcomeScreen.classList.add('hide');
     quizContainer.classList.remove('hide');
     startQuiz();
-    clearInterval(countdown);
     timerDisplay();
+   
 
  });
 
  window.onload = function () {
     welcomeScreen.classList.remove('hide');
     quizContainer.classList.add('hide');
+   
    
  };
 
@@ -124,9 +125,8 @@ const timeLeft = document.querySelector('.time-left');
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
-   
     
- }
+ };
 
  function showQuestion(){
     resetQuiz();
@@ -148,11 +148,13 @@ const timeLeft = document.querySelector('.time-left');
  }
 
  function resetQuiz(){
-    nextButton.style.dispaly = 'none';
+    nextButton.style.display = 'none';
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);  
     }
+  
 }
+
 function selectAnswer(a){
     const selectBtn = a.target;
     const isCorrect = selectBtn.dataset.correct === "true";
@@ -169,13 +171,17 @@ function selectAnswer(a){
         button.disabled = true;
     });
     nextButton.style.display = 'block';
+    
   }
 
 function showScore(){
+    
     resetQuiz();
     question.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
+    nextButton.classList.add('play-button');
     nextButton.style.display = "block";
+   
     
 } 
 function selectNextButton(){
@@ -188,11 +194,13 @@ function selectNextButton(){
         
     }
 }
+
 nextButton.addEventListener('click', () => {
     if(currentQuestionIndex < questions.length){
         selectNextButton();
     }else{
         startQuiz();
+        count=20;
     }
     
 });
@@ -208,9 +216,22 @@ nextButton.addEventListener('click', () => {
         if(count == 0){
             clearInterval(countdown);
             showScore();
+           
         }
         
     },1000);
  };
 
+// function resetTimer(){
+//     count = count;
+// };
 
+// const playButton = document.querySelector('.play-btn');
+
+// playButton.addEventListener("click",function(){
+   
+//     count=20;
+//     clearInterval(countdown);
+//     timerDisplay();
+
+// });
