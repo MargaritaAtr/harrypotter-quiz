@@ -8,7 +8,7 @@
 
 body {
     height: 100vh;
-    background-image: url(/assets/images/welcome.jpg);
+    background-image: url('/assets/images/train.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -195,6 +195,9 @@ footer {
     }
     p{
         color: rgb(2,21,21);
+    }
+    footer{
+        height: 2rem;
     }
 
     
